@@ -1,0 +1,47 @@
+
+.login {
+  height: 100vh;
+  /* background-color: aquamarine; */
+  background-image: url('/imgs/687ccdecdfaabcc8873468894f8e10b9.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* padding: 50px 20px 15vh; */
+}
+
+.card__login {
+  height: 70vh;
+  width: 90vw;
+  margin-top: 50px;
+  padding: 20px 0px ;
+  /* padding: 10px 25vw  25vh ; */
+  /* margin-bottom: 100px ; */
+  border-radius: 15px;
+  /* background-color: white; */
+  background-color: rgba(255, 255, 255, 0.863);
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
+
+.logo {
+  width: 150px;
+  border-radius: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.input-text__container {
+  background-color: white;
+}
