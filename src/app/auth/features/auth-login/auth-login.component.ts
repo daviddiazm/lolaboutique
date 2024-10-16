@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { NavBarComponent } from "../../../shared/nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-auth-login',
@@ -13,8 +14,9 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
-  ],
+    MatButtonModule,
+    NavBarComponent
+],
   templateUrl: './auth-login.component.html',
   styleUrl: './auth-login.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
