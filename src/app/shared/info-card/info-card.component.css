@@ -3,7 +3,8 @@
   width: 90%;
 }
 article {
-  box-shadow: inset 0px 10px 15px -3px rgba(0,0,0,0.1);
+  /* box-shadow: inset 0px 10px 15px -3px rgba(0,0,0,0.1); */
+  box-shadow: inset 0px -4px 16px 6px rgba(0,0,0,0.1);
 
   position: relative;
   /* overflow: hidden; */
@@ -20,7 +21,7 @@ article {
 
   /* position: absolute; */
   width: 100%;
-  background-color: aquamarine;
+  background-color: rgba(0, 128, 0, 0.379);
   border-radius: 15px 15px 55% 55%;
 
 
