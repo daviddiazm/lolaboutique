@@ -45,3 +45,15 @@ form {
 .input-text__container {
   background-color: white;
 }
+
+.loggin_auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.loggin_auth > button {
+  background-color: white;
+}
