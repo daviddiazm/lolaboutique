@@ -1,3 +1,67 @@
 .home {
   min-height: 100vh;
+  /* overflow: hidden; */
 }
+
+.first-view {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://64.media.tumblr.com/7f131f05b66611febd689ae452f4aa78/601516830f6f0534-5f/s400x600/dfb226632efe30317c5e6ef1f939727249831192.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.eslogan {
+  position: absolute;
+  width: 90vw;
+  font-size: x-large;
+  font-family: "Spicy Rice", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  top: 90px;
+}
+
+.eslogan > span {
+  color: green;
+}
+
+.info-contact__container {
+  width: 80vw;
+  height: 15vh;
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 15px;
+
+  background-color: rgba(255, 255, 255, 0.792);
+  backdrop-filter: blur(5px);
+
+}
+
+.info-contact {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+li {
+  font-size: 2rem;
+  list-style: none;
+}
+
+/* .img__Home {
+  height: 100vh;
+} */
