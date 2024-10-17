@@ -1,6 +1,9 @@
 section {
-  position: sticky;
+  position: fixed;
+  /* position: sticky; */
   bottom: 0px;
+  /* top: -10px; */
+
   padding: 2px 0px 20px 0px;
   border-radius: 15px 15px 0px 0px;
   width: 100vw;
@@ -9,6 +12,7 @@ section {
   background-color: white;
   backdrop-filter: blur(5px);
   /* background: linear-gradient(to bottom, white 50%, grey 50%); */
+  z-index: 5;
 }
 
 ul {
