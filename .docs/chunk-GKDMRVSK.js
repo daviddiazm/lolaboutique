@@ -1,0 +1,1 @@
+import"./chunk-7CGTOI24.js";var o=[{path:"login",loadComponent:()=>import("./chunk-NBURHH4C.js")},{path:"sign-up",loadComponent:()=>import("./chunk-MTR35WRV.js")},{path:"**",redirectTo:"login"}];export{o as default};

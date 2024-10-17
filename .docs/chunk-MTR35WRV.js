@@ -1,0 +1,2 @@
+import{$ as i,Yb as p,db as a,eb as s,tb as o,wb as r}from"./chunk-CWYV6Z2F.js";import"./chunk-7CGTOI24.js";var u=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=i({type:e,selectors:[["app-auth-sign-up"]],standalone:!0,features:[r],decls:3,vars:0,template:function(n,d){n&1&&(a(0,"p"),o(1,"auth-sign-up works!"),s(),o(2,`,
+`))},dependencies:[p],styles:["[_nghost-%COMP%]{display:block}"],changeDetection:0});let t=e;return t})();export{u as default};
