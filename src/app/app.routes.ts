@@ -6,11 +6,15 @@ export const routes: Routes = [
     loadChildren: () => import('./auth/features/auth.routes')
   },
   {
+    path: 'products',
+    loadChildren: () => import('./products/features/products.routes')
+  },
+  {
     path: 'home',
     loadChildren: () => import('./home/features/home.routes')
   },
   {
     path: '**',
-    redirectTo: "home"
+    redirectTo: "products"
   }
 ];
