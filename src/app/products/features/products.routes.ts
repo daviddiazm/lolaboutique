@@ -6,8 +6,12 @@ const routes: Routes = [
     loadComponent: () => import('./product-list/product-list.component')
   },
   {
+    path: 'upload',
+    loadComponent: () => import('./upload-product/upload-product.component')
+  },
+  {
     path: '**',
-    redirectTo: 'list'
+    redirectTo: 'upload'
   }
 ]
 
