@@ -1,0 +1,92 @@
+<form class="upload-clothe">
+  <h3>Subir Producto</h3>
+
+  <div class="input_container">
+    <h5>Tipo de producto</h5>
+    <mat-form-field>
+      <mat-label>Tipo de producto</mat-label>
+      <mat-select [(ngModel)]="selectedValue" name="type">
+        @for (productType of prodcutsType; track productType) {
+        <mat-option [value]="productType.value">{{productType.viewValue}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="input_container">
+    <h5>Tamanio de producto</h5>
+    <div *ngIf="selectedValue == 'shoes'">
+      hola
+    </div>
+    <mat-form-field *ngIf="selectedValue !== 'shoes'">
+      <mat-label>Tipo de producto</mat-label>
+      <mat-select [(ngModel)]="selectedValue" name="size">
+        @for (prodcutsSize of prodcutsSize; track prodcutsSize) {
+        <mat-option [value]="prodcutsSize.value">{{prodcutsSize.viewValue}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="input_container">
+    <h5>Precio del producto</h5>
+    <mat-form-field appearance="fill">
+      <mat-label>Precio</mat-label>
+      <input matInput placeholder="Ingrese el precio de la prenda">
+    </mat-form-field>
+  </div>
+
+  <!-- <div class="input_container">
+    <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+    <input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+  </div> -->
+
+  <div class="upload-container">
+    <h1>Subir una Foto</h1>
+    <label class="upload-label" for="fileInput">
+      <span>Seleccionar una imagen</span>
+      <input type="file" id="fileInput" accept="image/*" (change)="onFileSelected($event)" />
+    </label>
+    <div *ngIf="previewUrl" class="preview-container">
+      <h3>Vista Previa:</h3>
+      <img [src]="previewUrl" alt="Vista previa de la foto" class="preview-image" />
+    </div>
+  </div>
+
+
+  <div class="color-box">
+    <app-color-picker-box (colorSelected)="getColorBox($event)" ></app-color-picker-box>
+  </div>
+
+  <div class="input_container">
+    <h5>Marca de producto</h5>
+    <mat-form-field>
+      <mat-label>Marca del producto</mat-label>
+      <mat-select [(ngModel)]="selectedValue" name="material">
+        @for (prodcutBrand of productBrands; track prodcutBrand) {
+        <mat-option [value]="prodcutBrand.value">{{prodcutBrand.viewValue}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="input_container">
+    <h5>Material de producto</h5>
+    <mat-form-field>
+      <mat-label>Material del producto</mat-label>
+      <mat-select [(ngModel)]="selectedValue" name="material">
+        @for (prodcutsMaterial of productMaterials; track prodcutsMaterial) {
+        <mat-option [value]="prodcutsMaterial.value">{{prodcutsMaterial.viewValue}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="input_container">
+    <button mat-flat-button type="submit">
+      Guardar producto
+    </button>
+  </div>
+
+  <!-- referencia https://assets.justinmind.com/wp-content/uploads/2019/05/prototyping-form-design.png -->
+</form>
