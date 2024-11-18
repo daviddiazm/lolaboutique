@@ -1,0 +1,48 @@
+:host {
+  display: block;
+}
+
+.color-block {
+  width: 100px;
+  height: 100px;
+  /* margin: 5px; */
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+  color: white;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.boxes-container {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.red { background-color: red; }
+.orange { background-color: orange; color: black; }
+.yellow { background-color: yellow; color: black; }
+.green { background-color: green; }
+.blue { background-color: blue; }
+.indigo { background-color: indigo; }
+.violet { background-color: violet; }
+.pink { background-color: pink; color: black; }
+.cyan { background-color: cyan; color: black; }
+.multicolor {
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  color: black;
+}
+.white { background-color: white; color: black; border: 1px solid #000; }
+.grey { background-color: grey; color: black; }
+.black { background-color: black; color: white; }
+
+
+.color-block:active {
+  filter: brightness(0.8); /* Slightly darkens the color */
+  transform: scale(0.95);  /* Adds a pressing effect */
+}
