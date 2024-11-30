@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { InfoCardComponent } from "../../../shared/info-card/info-card.component";
-import AboutUs from '../../../interfaces/AboutUs';
+import AboutUs from '../../../core/interfaces/AboutUs';
 
 @Component({
   selector: 'app-home',
