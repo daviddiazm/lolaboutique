@@ -11,13 +11,17 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/features/home.routes')
+    loadChildren: () => import('./home/features/home.routes'),
+  },
+  {
+    path: "admin",
+    loadChildren: () => import('./admin/fetures/admin.routes')
   },
   {
     path: '**',
     // redirectTo: "products"
-    // redirectTo: "auth"
-    redirectTo: "products"
+    redirectTo: "auth"
+    // redirectTo: "products"
 
   }
 ];

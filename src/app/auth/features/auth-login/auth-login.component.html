@@ -4,18 +4,18 @@
     <img src="https://64.media.tumblr.com/6a24b07e74e087e5756402eecd6b6537/601516830f6f0534-f5/s640x960/0149d5a36f040fab262986b0a7429476083eb1ed.jpg" alt="logo" class="logo">
 
 
-    <form action="" class="form">
+    <form action="" [formGroup]="loginGroup" (submit)="onSubmit()" class="form">
 
       <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" placeholder="Placeholder">
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         <mat-hint>Hint</mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
+        <mat-label>Contrasenia</mat-label>
+        <input matInput formControlName="password" placeholder="Placeholder">
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         <mat-hint>Hint</mat-hint>
       </mat-form-field>
