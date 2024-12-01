@@ -1,14 +1,13 @@
 <section>
   <div class="img_container">
-    <img src="https://cdn.koaj.co/111020-big_default/pantalon-jean-mom.jpg" alt="Prenda de ropa">
+    <img [src]="clothe.img_url" alt="Prenda de ropa">
   </div>
   <div class="text__container">
     <article>
-      <h4>Pantalon Koaj</h4>
-      <p><span>Talla:</span> 35</p>
-      <p><span>Color:</span> Negro</p>
-      <p><span>Marca:</span> Koaj</p>
-      <p><span>Descripcion:</span> Sin bolsillo izquierdo</p>
+      <h4>{{clothe.type}} {{clothe.brand}}</h4>
+      <p><span>Talla:</span> {{clothe.size}} </p>
+      <p><span>Color:</span> {{clothe.color}}</p>
+      <p><span>Marca:</span> {{clothe.brand}}</p>
     </article>
     <div class="btns">
       <button mat-button>Comprar</button>
@@ -16,3 +15,10 @@
     </div>
   </div>
 </section>
+
+<!--
+<p>hola</p>
+<pre>
+
+</pre> -->
+

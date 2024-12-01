@@ -16,7 +16,7 @@
 
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { catchError, Observable, of, tap } from 'rxjs';
 import { Clothe } from '../interfaces/Clothe.interface';
 
 @Injectable({
@@ -31,7 +31,8 @@ export class ProductService {
     let url = `${this.apiUrl}/clothes`
     return this.http.get<Clothe[]>(url)
       .pipe(
-        tap(clothes => console.log(clothes))
+        // tap(clothes => console.log(clothes)),
+        catchError(() => of([]))
       )
   }
 

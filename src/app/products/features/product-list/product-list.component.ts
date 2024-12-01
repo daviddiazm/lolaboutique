@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ProductCardComponent } from "../../ui/product-card/product-card.component";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductService } from '../../../core/services/product.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Clothe } from '../../../core/interfaces/Clothe.interface';
 
 @Component({
@@ -19,30 +18,26 @@ import { Clothe } from '../../../core/interfaces/Clothe.interface';
     MatIconModule,
 
 ],
-providers: [
-  HttpClient
-],
+providers: [],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export default class ProductListComponent implements OnInit {
 
-  clothes: Clothe[]
+  clothes: Clothe[] = []
 
-  constructor(private productService: ProductService) {
-    this.clothes = []
-  }
+  constructor(
+    private productService: ProductService,) {}
 
   ngOnInit(): void {
-    console.log(
-      this.productService.getProducts().subscribe(
-        clothes => {
-          this.clothes = clothes
-        }
-      )
-    );
-
+    this.productService.getProducts().subscribe(
+      clothes => {
+        this.clothes = clothes
+        console.log(this.clothes);
+      }
+    )
+    // console.log(this.clothes);
   }
 
 
