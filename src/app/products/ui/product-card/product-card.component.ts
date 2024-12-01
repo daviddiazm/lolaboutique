@@ -17,10 +17,14 @@ import { Clothe } from '../../../core/interfaces/Clothe.interface';
 export class ProductCardComponent implements OnInit {
   @Input() clothe!: Clothe;
 
+  linkWhatsApp:string = ""
 
   ngOnInit(): void {
     if(!this.clothe) throw Error('No hay')
   }
 
+  redirectToWhatsapp () {
+    this.linkWhatsApp = "https://wa.me/573117672673?text=I'm%20inquiring%20about%20the%20apartment%20listing"
+  }
 
 }
