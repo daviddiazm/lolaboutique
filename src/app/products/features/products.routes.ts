@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from '../../core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -7,11 +8,12 @@ const routes: Routes = [
   },
   {
     path: 'upload',
-    loadComponent: () => import('./upload-product/upload-product.component')
+    loadComponent: () => import('./upload-product/upload-product.component'),
+    canActivate: [AuthGuard]
   },
   {
     path: '**',
-    redirectTo: 'upload'
+    redirectTo: 'list'
   }
 ]
 
