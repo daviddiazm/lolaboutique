@@ -75,6 +75,7 @@ export default class UploadProductComponent {
   ];
 
   prodcutsSize: ProdcutsSize[] = [
+    {value: 'none', viewValue: 'Talla unica'},
     {value: 'xs', viewValue: 'XS'},
     {value: 's', viewValue: 'S'},
     {value: 'm', viewValue: 'M'},
@@ -97,6 +98,7 @@ export default class UploadProductComponent {
   ];
 
   productBrands: ProductBrand[] = [
+    { value: 'none', viewValue: 'No tiene' },
     { value: 'nike', viewValue: 'Nike' },
     { value: 'adidas', viewValue: 'Adidas' },
     { value: 'puma', viewValue: 'Puma' },
@@ -105,8 +107,8 @@ export default class UploadProductComponent {
     { value: 'prada', viewValue: 'Prada' },
     { value: 'zara', viewValue: 'Zara' },
     { value: 'h&m', viewValue: 'H&M' },
-    { value: 'levi', viewValue: 'Levi\'s' },
-    { value: 'gap', viewValue: 'Gap' }
+    { value: 'levi', viewValue: 'Levis' },
+    { value: 'gap', viewValue: 'Gap' },
   ];
 
   // onFileSelected() {

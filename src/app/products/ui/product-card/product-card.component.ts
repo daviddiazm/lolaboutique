@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { Clothe } from '../../../core/interfaces/Clothe.interface';
 
 @Component({
   selector: 'app-product-card',
@@ -13,4 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './product-card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductCardComponent { }
+export class ProductCardComponent {
+  @Input() clothe?:Clothe
+
+
+}

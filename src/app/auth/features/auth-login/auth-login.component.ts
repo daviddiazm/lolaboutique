@@ -41,5 +41,11 @@ export default class AuthLoginComponent {
   onSubmit() {
     const {email, password} = this.loginGroup.value
     this.authservice.login(email, password)
+
+    if(this.authservice.isLoggedIn()){
+      this.router.navigateByUrl('/admin')
+    } else {
+      alert('Usuario o contraseña incorrectos');
+    }
   }
 }
