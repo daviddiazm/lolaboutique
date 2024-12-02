@@ -25,8 +25,8 @@ import { environments } from '../../../environments/environments';
 })
 export class ProductService {
   // private apiUrl = 'http://127.0.0.1:8000'; // URL de la API
-  // private apiUrl = 'https://backend-lolas-fastapi.onrender.com'; // URL de la API
-  private apiUrl: string = environments.baseUrl
+  private apiUrl = 'https://backend-lolas-fastapi.onrender.com'; // URL de la API
+  // private apiUrl: string = environments.baseUrl
 
   constructor(private http: HttpClient) {}
 
