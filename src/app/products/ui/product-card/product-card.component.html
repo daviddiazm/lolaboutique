@@ -10,8 +10,14 @@
       <p><span>Marca:</span> {{clothe.brand}}</p>
     </article>
     <div class="btns">
-      <a aria-label="Chat on WhatsApp" href="https://wa.me/573117672673?text=I'm%20inquiring%20about%20the%20apartment%20listing">
+      <!-- <a aria-label="Chat on WhatsApp" href="https://wa.me/573117672673?text=I'm%20inquiring%20about%20the%20apartment%20listing">
         <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.png" />
+      </a> -->
+      <a [href]="linkWhatsApp" target="_blank" rel="noopener noreferrer">
+        <button class="whatsapp-button">
+          <i class="fab fa-whatsapp"></i>
+          Contacta por WhatsApp
+        </button>
       </a>
       <button mat-button>Me gusta</button>
     </div>

@@ -16,14 +16,15 @@ import { Clothe } from '../../../core/interfaces/Clothe.interface';
 })
 export class ProductCardComponent implements OnInit {
   @Input() clothe!: Clothe;
-
-  linkWhatsApp:string = ""
+  // linkWhatsApp: string = `https://wa.me/573117672673?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20${this.clothe.img_url}`
+  linkWhatsApp: string = ``
 
   ngOnInit(): void {
-    if(!this.clothe) throw Error('No hay')
+    if (!this.clothe) throw Error('No hay')
+    else this.linkWhatsApp = `https://wa.me/573117672673?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20${this.clothe.img_url}`
   }
 
-  redirectToWhatsapp () {
+  redirectToWhatsapp() {
     this.linkWhatsApp = "https://wa.me/573117672673?text=I'm%20inquiring%20about%20the%20apartment%20listing"
   }
 
