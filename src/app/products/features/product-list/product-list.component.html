@@ -7,22 +7,9 @@
   </mat-form-field>
 
   <section class="list_cards">
-    <!-- <app-product-card *ngFor="let clothe of clothes" [clothe]="clothe"></app-product-card> -->
-
     <ng-container *ngIf="clothes.length > 0">
       <app-product-card *ngFor="let clothe of clothes" [clothe]="clothe"></app-product-card>
     </ng-container>
-
-
-    <!-- <app-product-card *ngFor="let clothe of clothes || []" [clothe]="clothe"></app-product-card> -->
-
-    <!-- <app-product-card
-      *ngFor="let clothe of clothes"
-      [clothe]="clothe"
-      ></app-product-card> -->
-
-    <!-- <app-product-card [clothe]="clothes[1]" ></app-product-card> -->
-
-
+    
   </section>
 </section>

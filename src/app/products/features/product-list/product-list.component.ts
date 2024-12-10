@@ -34,10 +34,8 @@ export default class ProductListComponent implements OnInit {
     this.productService.getProducts().subscribe(
       clothes => {
         this.clothes = clothes
-        console.log(this.clothes);
       }
     )
-    // console.log(this.clothes);
   }
 
 
