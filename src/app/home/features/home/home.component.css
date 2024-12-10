@@ -1,57 +1,88 @@
+.circle {
+  z-index: -5;
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  top: -50px;
+  left: -40px;
+  background-color: var(--background-green-opacity);
+}
+.circle2 {
+  z-index: -5;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  top: 300px;
+  right: -20px;
+  background-color: var(--background-green-opacity);
+}
+.circle3 {
+  z-index: -5;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  top: 450px;
+  left: -20px;
+  background-color: var(--background-green-opacity);
+}
+.circle4 {
+  z-index: -5;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 550px;
+  left: 30px;
+  background-color: var(--background-green-opacity);
+}
+
 .home {
+  position: relative;
+  max-width: 100vw;
   min-height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
   padding-bottom: 40vh;
 }
 
-.first-view {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  background-image: url(https://64.media.tumblr.com/7f131f05b66611febd689ae452f4aa78/601516830f6f0534-5f/s400x600/dfb226632efe30317c5e6ef1f939727249831192.webp);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
+.fisr-view {
+  margin: 0;
+  padding: 0;
 }
 
-.eslogan {
-  position: absolute;
-  width: 90vw;
-  font-size: x-large;
-  font-family: "Spicy Rice", serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-  top: 90px;
-}
-
-.eslogan > span {
-  color: green;
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .info-contact__container {
-  width: 80vw;
-  height: 15vh;
-  position: absolute;
-  bottom: 100px;
+  width: 100vw;
+  /* height: 15vh; */
   display: flex;
+  justify-content: center;
+  margin-top: 20vh;
   flex-wrap: wrap;
+  gap: 10px;
+}
+.info-contact__container h4 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 80%;
+  padding: 10px;
+  text-align: center;
   border-radius: 15px;
-
   background-color: rgba(255, 255, 255, 0.792);
   backdrop-filter: blur(5px);
-
 }
-
 .info-contact {
-  width: 100%;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.792);
+  backdrop-filter: blur(5px);
+  width: 80%;
   margin: 0px;
-  padding: 0px;
+  padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -63,139 +94,36 @@
   list-style: none;
 }
 
-/* .img__Home {
-  height: 100vh;
-} */
 
-/*
-.list__container {
+.list-products {
+  position: relative;
+  margin-top: 20vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 10vh;
-  padding-bottom: 20px;
+  align-items: center;
 }
 
-.list__container h3 {
-  font-family: "Spicy Rice", serif;
-  font-weight: 400;
-  font-style: normal;
+.list-products h4 {
+  font-weight: bold;
   text-align: center;
 }
 
-.list__container a {
-  border-bottom: 1px blue solid;
-  font-size: 1.5rem;
-}
-
-
-.about-us-section {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-} */
-
-
-
-.about-us-section {
-  background: #ffffff; /* Fondo blanco para contraste */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  border-radius: 10px;
-  max-width: 900px;
-  border: 2px solid #e0f3dc; /* Bordes de un verde muy suave */
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.about_article  {
-  max-width: 80vw;
-  overflow-x: hidden;
-
-  background: #e8f8e8; /* Verde pastel claro */
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #86c29c; /* Detalle decorativo */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.about_article :hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.about_article h2, h3 {
-  font-family: 'Pacifico', cursive;
-  color: #3b7c56; /* Verde más oscuro */
-}
-
-.about_article h2 {
-  font-size: 2rem;
-}
-
-.about_article h3 {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-}
-
-.about_article p, ul {
-  font-size: 1rem;
-  color: #555;
-}
-
-.about_article ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.about_article ul li {
-  margin: 0.5rem 0;
-  /* padding-left: 1rem; */
+.list-products button {
+  /* background-color: aliceblue; */
   position: relative;
+  font-size: 1.5rem;
+  bottom: 60px;
 }
 
-.about_article strong {
-  color: #3b7c56; /* Destacar valores importantes */
+.gradient {
+  border-radius: 15px;
+  width: 100vw;
+  height: 20vh;
+  position: absolute;
+  bottom: 60px;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,174,0,0) 100%);
 }
 
-.about_article a {
-  color: #3b7c56;
-  text-decoration: none;
-}
 
-.about_article a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .about-us-section {
-    padding: 1rem;
-  }
-
-  .about_article h2 {
-    font-size: 1.5rem;
-  }
-
-  .about_article h3 {
-    font-size: 1.2rem;
-  }
-
-  .about_article p, ul {
-    font-size: 0.9rem;
-  }
-}

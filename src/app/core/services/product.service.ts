@@ -24,8 +24,8 @@ import { environments } from '../../../environments/environments';
   providedIn: 'root', // Disponible globalmente en toda la aplicación
 })
 export class ProductService {
-  // private apiUrl = 'http://127.0.0.1:8000'; // URL de la API
-  private apiUrl = 'https://backend-lolas-fastapi.onrender.com'; // URL de la API
+  private apiUrl = 'http://127.0.0.1:8000'; // URL de la API
+  // private apiUrl = 'https://backend-lolas-fastapi.onrender.com'; // URL de la API
   // private apiUrl: string = environments.baseUrl
 
   constructor(private http: HttpClient) {}
@@ -35,6 +35,14 @@ export class ProductService {
     return this.http.get<Clothe[]>(url)
       .pipe(
         // tap(clothes => console.log(clothes)),
+        catchError(() => of([]))
+      )
+  }
+
+  getFirstTrheeProducts(): Observable<Clothe[]> {
+    let url = `${this.apiUrl}/clothes_first_three`
+    return this.http.get<Clothe[]>(url)
+      .pipe(
         catchError(() => of([]))
       )
   }

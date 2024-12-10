@@ -1,12 +1,17 @@
 <div class="home">
 
-  <section class="first-view">
-    <!-- <img class="img__Home" src="https://64.media.tumblr.com/7f131f05b66611febd689ae452f4aa78/601516830f6f0534-5f/s400x600/dfb226632efe30317c5e6ef1f939727249831192.webp" alt="Imagen de ropa home"> -->
-    <!-- <div class="img__Home" ></div> -->
-    <article class="eslogan">
-      Las mejores prendas al <span>mejor precio</span> ✨
-    </article>
+  <section class="fisr-view">
+    <div class="circle"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+    <div class="circle4"></div>
+    <div class="circle5"></div>
+
     <article class="info-contact__container">
+      <img src="https://64.media.tumblr.com/6a24b07e74e087e5756402eecd6b6537/601516830f6f0534-f5/s640x960/0149d5a36f040fab262986b0a7429476083eb1ed.jpg" class="logo" alt="">
+      <h4>
+        Renueva tu estilo, reciclando con propósito.
+      </h4>
       <ul class="info-contact">
         <li>
           <a href="https://chat.whatsapp.com/H9BLXctNIjOCz1zzP847RW" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-whatsapp"></i> </a>
@@ -23,90 +28,26 @@
       </ul>
     </article>
   </section>
-<!--
-  <section class="list__container">
-    <h3>Conoce nuestros productos</h3>
-    <section class="card_list">
-      <app-product-card></app-product-card>
-      <app-product-card></app-product-card>
-      <app-product-card></app-product-card>
-    </section>
-    <a mat-button [routerLink]="['/producs']" routerLinkActive="router-link-active" target="_blank">
-      Ver mas
-      <mat-icon fontIcon="arrow_forward_ios"></mat-icon>
-    </a>
-  </section> -->
 
-  <!-- <section class="about-us-section">
-    <div class="container">
-      <app-info-card
-        *ngFor="let item of auboutUsList"
-        [title]="item.title"
-        [description]="item.description"
-        >
-      </app-info-card>
-    </div>
-  </section> -->
-
-  <section  class="about-us-section">
-    <div class="container">
-      <article class="about_article" >
-        <h2>Sobre Nosotros</h2>
-        <p>
-          Bienvenidos a <strong>Lola's Boutique</strong>, una tienda de ropa de segunda mano dedicada a ofrecer moda
-          sostenible y accesible.
-          Nuestra misión es dar una segunda vida a la ropa, reduciendo el impacto ambiental y ayudando a nuestros clientes
-          a encontrar estilos únicos a precios asequibles.
-        </p>
-      </article>
-
-      <article class="about_article" >
-        <h3>Nuestra Historia</h3>
-        <p>
-          Lola's Boutique nació de la pasión por la moda y el deseo de crear un impacto positivo en el medio
-          ambiente. Comenzamos como una pequeña iniciativa para compartir prendas en buen estado y con el tiempo hemos
-          crecido para convertirnos en un espacio donde todos pueden encontrar algo especial.
-        </p>
-      </article>
-
-      <article class="about_article" >
-        <h3>Nuestra Misión</h3>
-        <p>
-          Promovemos la moda circular y sostenible. Creemos que cada prenda tiene una historia y merece ser reutilizada.
-          Nuestro compromiso es proporcionar ropa de calidad, asequible y siempre a la moda, mientras reducimos el
-          desperdicio textil.
-        </p>
-      </article>
-
-      <article class="about_article" >
-        <h3>Nuestros Valores</h3>
-        <ul>
-          <li>🌿<strong>Sostenibilidad:</strong> Fomentamos el consumo responsable y la reutilización de prendas.</li>
-          <li>🌿<strong>Calidad:</strong> Seleccionamos cuidadosamente cada artículo para asegurar que cumple con nuestros
-            estándares de calidad.</li>
-          <li>🌿<strong>Accesibilidad:</strong> Hacemos que la moda esté al alcance de todos.</li>
-          <li>🌿<strong>Responsabilidad Social:</strong> Apoyamos causas locales y ayudamos a nuestra comunidad.</li>
-        </ul>
-      </article>
-
-      <article class="about_article" >
-        <h3>El Proceso de Selección</h3>
-        <p>
-          Cada prenda en nuestra tienda pasa por un riguroso proceso de selección. Nos aseguramos de que todas las piezas
-          estén en excelente estado y listas para una nueva vida. De esta manera, te ofrecemos ropa única, de alta
-          calidad, a un precio inmejorable.
-        </p>
-      </article>
-
-      <article class="about_article" >
-        <h3>Nuestro Equipo</h3>
-        <p>
-          Nuestro equipo está formado por apasionados de la moda y defensores de la sostenibilidad. Trabajamos día a día
-          para brindarte las mejores prendas y una experiencia de compra agradable y amigable con el medio ambiente.
-        </p>
-      </article>
-    </div>
+  <section class="list-products">
+    <h4>Conoce nuestros productos 😍</h4>
+    <app-product-card
+      *ngFor="let clothe of clothesListFirstThree"
+      [clothe]="clothe">
+    </app-product-card>
+    <button mat-raised-button >Ver mas -></button>
+    <div class="gradient"></div>
   </section>
 
+  <section class="about-us">
+    <h4>Sobre nosotros</h4>
+    <article
+      class="info-card"
+      *ngFor="let element of auboutUsList" >
+      <h5> {{element.title}} </h5>
+      <p> [in] </p>
+    </article>
+
+  </section>
 
 </div>
