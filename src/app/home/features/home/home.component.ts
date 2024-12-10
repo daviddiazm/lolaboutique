@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NavBarComponent } from "../../../shared/nav-bar/nav-bar.component";
 import { ProductCardComponent } from "../../../products/ui/product-card/product-card.component";
 import { RouterLink } from '@angular/router';
@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { InfoCardComponent } from "../../../shared/info-card/info-card.component";
 import AboutUs from '../../../core/interfaces/AboutUs';
+import { ProductService } from '../../../core/services/product.service';
+import { Clothe } from '../../../core/interfaces/Clothe.interface';
 
 @Component({
   selector: 'app-home',
@@ -22,9 +24,23 @@ import AboutUs from '../../../core/interfaces/AboutUs';
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
-export default class HomeComponent {
+export default class HomeComponent implements OnInit {
+
+  public clothesListFirstThree : Clothe[] = []
+
+  constructor(private productService:ProductService) {}
+
+
+  ngOnInit(): void {
+    this.productService.getFirstTrheeProducts().subscribe(
+      clothes => {
+        this.clothesListFirstThree = clothes
+      }
+    )
+  }
+
 
   public auboutUsList:AboutUs[] = [
     {
