@@ -38,5 +38,4 @@ export default class ProductListComponent implements OnInit {
     )
   }
 
-
 }
