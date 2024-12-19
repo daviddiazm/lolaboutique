@@ -40,12 +40,12 @@
   </section>
 
   <section class="about-us">
-    <h4>Sobre nosotros</h4>
     <article
       class="info-card"
-      *ngFor="let element of auboutUsList" >
-      <h5> {{element.title}} </h5>
-      <p> [in] </p>
+      *ngFor="let element of auboutUsList; let i = index"
+      [ngClass]="{'odd-card': i % 2 == 0}">
+      <h5>{{element.title}}</h5>
+      <p [innerHTML]="element.description"></p>
     </article>
 
   </section>

@@ -127,3 +127,38 @@
 }
 
 
+/* about us */
+.about-us {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 2rem;
+}
+
+.info-card {
+  text-align: center;
+  background-color: var(--background-green-opacity);
+  padding: 1.5rem 10px;
+  border-color: white;
+  border-radius: 15px;
+}
+
+.info-card:nth-child(4) p {
+  text-align: start;
+}
+
+.info-card h5 {
+  font-weight: bold;
+}
+
+.info-card p {
+}
+
+
+.odd-card {
+  background-color: rgba(255, 255, 255, 0.76);
+  border-color: var(--background-green);
+}
