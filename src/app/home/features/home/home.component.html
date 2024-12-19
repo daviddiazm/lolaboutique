@@ -31,11 +31,15 @@
 
   <section class="list-products">
     <h4>Conoce nuestros productos 😍</h4>
-    <app-product-card
-      *ngFor="let clothe of clothesListFirstThree"
-      [clothe]="clothe">
-    </app-product-card>
-    <button mat-raised-button >Ver mas -></button>
+    <div class="products_container">
+      <app-product-card
+        *ngFor="let clothe of clothesListFirstThree"
+        [clothe]="clothe">
+      </app-product-card>
+    </div>
+    <button
+      mat-raised-button
+      routerLink="/products" > Ver mas -></button>
     <div class="gradient"></div>
   </section>
 
@@ -47,7 +51,6 @@
       <h5>{{element.title}}</h5>
       <p [innerHTML]="element.description"></p>
     </article>
-
   </section>
 
 </div>
