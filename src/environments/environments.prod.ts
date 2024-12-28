@@ -1,3 +1,4 @@
 export const environments = {
-  baseUrl : 'https://backend-lolas-fastapi.onrender.com'
-}
+  production: true,
+  baseUrl: 'https://backend-lolas-fastapi.onrender.com' // URL para producción
+};
