@@ -1,14 +1,12 @@
 <section class="products">
-  <mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
 
   <section class="list_cards">
     <ng-container *ngIf="clothes.length > 0">
       <app-product-card *ngFor="let clothe of clothes" [clothe]="clothe"></app-product-card>
     </ng-container>
   </section>
+
+  <div *ngIf="clothes.length < 1">
+    <p>Cargando...</p>
+  </div>
 </section>

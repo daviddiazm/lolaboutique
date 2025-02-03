@@ -32,6 +32,7 @@ export default class HomeComponent implements OnInit {
 
   constructor(private productService:ProductService) {}
 
+  
 
   ngOnInit(): void {
     this.productService.getFirstTrheeProducts().subscribe(
