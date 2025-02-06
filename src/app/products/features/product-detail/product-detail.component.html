@@ -1,1 +1,21 @@
-<p>product-detail works!</p>,
+<section>
+  <div class="img_container">
+    <img [src]="clothe.img_url" alt="Prenda de ropa">
+  </div>
+  <div class="text__container">
+    <article>
+      <h4>{{ clothe.title }}</h4>
+      <p><span>Talla:</span> {{clothe.size}} </p>
+      <p><span>Marca:</span> {{clothe.brand}}</p>
+      <p><span>Precio:</span> {{clothe.price | currency:'USD':'symbol':'1.0-0'}}</p>
+    </article>
+    <div class="btns">
+      <a [href]="linkWhatsApp" target="_blank" rel="noopener noreferrer">
+        <button class="whatsapp-button">
+          <i class="fab fa-whatsapp"></i>
+          Contacta por WhatsApp
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
