@@ -1,7 +1,7 @@
 export interface Clothe {
   title:     string;
   size:      string;
-  id:        number;
+  id:        string;
   type:      string;
   condition: string;
   price:     number;
