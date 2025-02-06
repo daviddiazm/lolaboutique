@@ -75,7 +75,7 @@ export default class ProductListComponent implements OnInit {
         // }))
 
         this.clothes = (element as unknown as ClotheContent)?.items.map(item => ({
-          id: 0, // Default since Asset likely lacks `id`
+          id: item.sys.id, // Default since Asset likely lacks `id`
           title: item.fields.titleClothe || "no tiene nombre",
           size: item.fields.sizeClothe, // Default value
           type: item.fields.typeClothe,
