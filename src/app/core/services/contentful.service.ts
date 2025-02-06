@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { createClient, Entry } from 'contentful'
+import { createClient, Entry, EntrySkeletonType } from 'contentful'
 import { environments } from '../../../environments/environments';
-import { from } from 'rxjs';
+import { from, Observable } from 'rxjs';
+import { ClotheResponse } from '../interfaces/ClotheResponse.interface';
 
 @Injectable({ providedIn: 'root' })
 export class ContentfulService {
@@ -14,6 +15,11 @@ export class ContentfulService {
 
   public getAllentries() {
     const promise = this.client.getEntries()
+    return from(promise)
+  }
+
+  public getEntrieById(id:string): any {
+    const promise = this.client.getEntry(id)
     return from(promise)
   }
 

@@ -2,13 +2,15 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input, Input, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Clothe } from '../../../core/interfaces/Clothe.interface';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
   imports: [
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
