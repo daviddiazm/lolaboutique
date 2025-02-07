@@ -4,14 +4,16 @@ import { ActivatedRoute, Router, RouterLinkActive } from '@angular/router';
 import { ContentfulService } from '../../../core/services/contentful.service';
 import { Clothe } from '../../../core/interfaces/Clothe.interface';
 import { ClotheResponse } from '../../../core/interfaces/ClotheResponse.interface';
+import { BtnWhatsappComponent } from "../../ui/btn-whatsapp/btn-whatsapp.component";
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
   imports: [
     CommonModule,
-    RouterLinkActive
-  ],
+    RouterLinkActive,
+    BtnWhatsappComponent
+],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css',
   changeDetection: ChangeDetectionStrategy.Default,
