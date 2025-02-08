@@ -87,9 +87,17 @@ export default class ProductListComponent implements OnInit {
   }
 
 
-  getAll() {
-    this.filteredClothes = this.clothes
+  resetFilters() {
+    this.productForm.reset({
+      sizes: [],
+      brand: '',
+      type: '',
+      title: ''
+    });
+    this.formSizes.clear()
+    this.formSizes.reset()
   }
+
 
   setSize(sizes: string[]) {
     this.formSizes.clear()
@@ -100,57 +108,19 @@ export default class ProductListComponent implements OnInit {
     });
   }
 
-  // filterSizes (sizes: string[]) {
-
-  // }
-
   apllyFilters() {
+    // console.log(this.productForm.value);
+
     this.selectedBrand = this.productForm.get('brand')?.value
     this.selectedType = this.productForm.get('type')?.value
     this.selectedSizes = this.productForm.get('sizes')?.value
-    this.searchTerm = this.productForm.get('title')?.value.toLowerCase()
-
-
+    this.searchTerm = this.productForm.get('title')?.value?.toLowerCase() || '';
     this.filteredClothes = this.clothes.filter(clothe => {
       return  (this.selectedBrand ? clothe.brand == this.selectedBrand : true) &&
               (this.selectedType ? clothe.type == this.selectedType : true) &&
               (this.searchTerm ? clothe.title.toLowerCase().includes(this.searchTerm) || clothe.brand.toLowerCase().includes(this.searchTerm) : true) &&
               (this.selectedSizes.length > 0 ?  clothe.size == this.selectedSizes.filter(size => { return clothe.size == size })[0]  : true)
     })
-
-    // this.filteredClothes =  this.clothes.filter(clothe => {
-    //   if (this.selectedSizes.length > 0) {
-    //     const sizesfiltereds = this.selectedSizes.filter(size => {
-    //       // console.log({size}, " " ,clothe.size);
-    //       // console.log(clothe.size == size);
-    //       return clothe.size == size
-    //     })
-    //     return clothe.size == sizesfiltereds[0]
-    //   } else {
-    //     return true
-    //   }
-    // })
-
-    // this.filteredClothes =  this.clothes.filter(clothe => {
-    //   if (this.selectedSizes.length > 0) {
-    //     return clothe.size == this.selectedSizes.filter(size => { return clothe.size == size })[0]
-    //   } else {
-    //     return true
-    //   }
-    // })
-
   }
-
-
-  // apllyFilters() {
-  //   this.filteredClothes = this.clothes.filter(clothe => {
-  //     return  this.selectedSize ? clothe.size == this.selectedSize : true &&
-  //             this.selectedBrand ? clothe.brand == this.productForm.controls["brand"].value : true &&
-  //             this.selectedType ? clothe.type == this.productForm.controls["type"].value : true &&
-  //             this.searchTerm ? clothe.title.includes(this.searchTerm) || clothe.brand.includes(this.searchTerm) : true
-  //   })
-  //   console.log(this.filteredClothes);
-  // }
-
 
 }
