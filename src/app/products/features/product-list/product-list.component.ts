@@ -23,8 +23,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule
-],
-providers: [],
+  ],
+  providers: [],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
   changeDetection: ChangeDetectionStrategy.Default,
@@ -32,39 +32,42 @@ providers: [],
 export default class ProductListComponent implements OnInit {
 
   clothes: Clothe[] = []
-  filteredClothes : Clothe[] = []
-  searchTerm : string = ''
-  selectedSize : string = ''
-  selectedBrand : string = ''
-  selectedType : string = ''
+  filteredClothes: Clothe[] = []
+  searchTerm: string = ''
+  selectedSizes: string[] = []
+  selectedBrand: string = ''
+  selectedType: string = ''
 
-  sizesList : string[] = ["XS", "S", "M", "L", "XL", "XXL" ]
-  brandList : string[] = ["Adidas", "Forever 21", "Nike", "Noth Face", "Puma", "Studio F" ]
-  typeList : string[] = ["Blusa", "Camiseta", "Camisa", "Pantalon", "Falda", "Chaqueta", "Vestido" ]
+  sizesList: string[] = ["XS", "S", "M", "L", "XL", "XXL"]
+  brandList: string[] = ["Adidas", "Forever 21", "Nike", "Noth Face", "Puma", "Studio F"]
+  typeList: string[] = ["Blusa", "Camiseta", "Camisa", "Pantalon", "Falda", "Chaqueta", "Vestido"]
 
 
   constructor(
-    private productService:   ProductService,
-    private contentfulService:ContentfulService,
-    private fb:               FormBuilder
+    private productService: ProductService,
+    private contentfulService: ContentfulService,
+    private fb: FormBuilder
   ) { }
 
-  public productForm : FormGroup = this.fb.group({
+  public productForm: FormGroup = this.fb.group({
     sizes: this.fb.array([]),
     brand: [''],
     type: [''],
     title: [''],
   })
 
-  get formSizes () {
+  get formSizes() {
     return this.productForm.controls['sizes'] as FormArray
   }
 
   ngOnInit(): void {
     this.getClothes()
+    this.productForm.valueChanges.subscribe(() => {
+      this.apllyFilters()
+    })
   }
 
-  getClothes () {
+  getClothes() {
     this.contentfulService.getAllentries().subscribe(
       element => {
         this.clothes = (element as unknown as ClotheContent)?.items.map(item => ({
@@ -84,52 +87,70 @@ export default class ProductListComponent implements OnInit {
   }
 
 
-  getAll () {
+  getAll() {
     this.filteredClothes = this.clothes
   }
 
-  setSize (sizes : string[]) {
+  setSize(sizes: string[]) {
     this.formSizes.clear()
     sizes.forEach(size => {
       this.formSizes.push(
-        this.fb.control( size )
+        this.fb.control(size)
       )
     });
-    // console.log(this.formSizes);
-    console.log(this.productForm);
-
-
-    // this.filteredClothes = this.clothes.filter(clothe => clothe.size == "S")
-    // this.selectedSize = size
-    // this.apllyFilters()
   }
 
-  setBrand ( brand : string ) {
-    this.selectedBrand = brand
-    this.apllyFilters()
-  }
+  // filterSizes (sizes: string[]) {
 
-  setType ( type : string ) {
-    console.log(type);
-
-    this.selectedType = type
-    this.apllyFilters()
-  }
-
-  setSearchTerm ( term : string ) {
-    this.searchTerm = term
-    this.apllyFilters()
-  }
+  // }
 
   apllyFilters() {
+    this.selectedBrand = this.productForm.get('brand')?.value
+    this.selectedType = this.productForm.get('type')?.value
+    this.selectedSizes = this.productForm.get('sizes')?.value
+    this.searchTerm = this.productForm.get('title')?.value.toLowerCase()
+
+
     this.filteredClothes = this.clothes.filter(clothe => {
-      return  this.selectedSize ? clothe.size == this.selectedSize : true &&
-              this.selectedBrand ? clothe.brand == this.selectedBrand : true &&
-              this.selectedType ? clothe.type == this.selectedType : true &&
-              this.searchTerm ? clothe.title.includes(this.searchTerm) || clothe.brand.includes(this.searchTerm) : true
+      return  (this.selectedBrand ? clothe.brand == this.selectedBrand : true) &&
+              (this.selectedType ? clothe.type == this.selectedType : true) &&
+              (this.searchTerm ? clothe.title.toLowerCase().includes(this.searchTerm) || clothe.brand.toLowerCase().includes(this.searchTerm) : true) &&
+              (this.selectedSizes.length > 0 ?  clothe.size == this.selectedSizes.filter(size => { return clothe.size == size })[0]  : true)
     })
+
+    // this.filteredClothes =  this.clothes.filter(clothe => {
+    //   if (this.selectedSizes.length > 0) {
+    //     const sizesfiltereds = this.selectedSizes.filter(size => {
+    //       // console.log({size}, " " ,clothe.size);
+    //       // console.log(clothe.size == size);
+    //       return clothe.size == size
+    //     })
+    //     return clothe.size == sizesfiltereds[0]
+    //   } else {
+    //     return true
+    //   }
+    // })
+
+    // this.filteredClothes =  this.clothes.filter(clothe => {
+    //   if (this.selectedSizes.length > 0) {
+    //     return clothe.size == this.selectedSizes.filter(size => { return clothe.size == size })[0]
+    //   } else {
+    //     return true
+    //   }
+    // })
+
   }
 
+
+  // apllyFilters() {
+  //   this.filteredClothes = this.clothes.filter(clothe => {
+  //     return  this.selectedSize ? clothe.size == this.selectedSize : true &&
+  //             this.selectedBrand ? clothe.brand == this.productForm.controls["brand"].value : true &&
+  //             this.selectedType ? clothe.type == this.productForm.controls["type"].value : true &&
+  //             this.searchTerm ? clothe.title.includes(this.searchTerm) || clothe.brand.includes(this.searchTerm) : true
+  //   })
+  //   console.log(this.filteredClothes);
+  // }
 
 
 }
