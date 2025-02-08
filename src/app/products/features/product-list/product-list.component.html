@@ -1,10 +1,4 @@
 <section class="products_list">
-  <!-- <mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field> -->
 
 
   <form action="" [formGroup]="productForm" (ngModelChange)="apllyFilters()" >
@@ -63,4 +57,8 @@
       <app-product-card *ngFor="let clothe of filteredClothes" [clothe]="clothe"></app-product-card>
     </ng-container>
   </section>
+
+  <div *ngIf="clothes.length < 1">
+    <p>Cargando...</p>
+  </div>
 </section>
