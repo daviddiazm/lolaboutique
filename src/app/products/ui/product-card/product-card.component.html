@@ -10,12 +10,7 @@
       <p><span>Precio:</span> {{clothe.price | currency:'USD':'symbol':'1.0-0'}}</p>
     </article>
     <div class="btns">
-      <a [href]="linkWhatsApp" target="_blank" rel="noopener noreferrer">
-        <button class="whatsapp-button">
-          <i class="fab fa-whatsapp"></i>
-          Contacta por WhatsApp
-        </button>
-      </a>
+      <app-btn-whatsapp [clotheImg]="clothe.img_url" ></app-btn-whatsapp>
       <a target="_blank"
         [routerLink]="['/products', 'product-detail', clothe.id]"
         class="detail_btn">

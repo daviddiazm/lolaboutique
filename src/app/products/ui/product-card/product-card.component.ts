@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, input, Input, OnInit } from '@angul
 import { MatButtonModule } from '@angular/material/button';
 import { Clothe } from '../../../core/interfaces/Clothe.interface';
 import { RouterModule } from '@angular/router';
+import { BtnWhatsappComponent } from "../btn-whatsapp/btn-whatsapp.component";
 
 @Component({
   selector: 'app-product-card',
@@ -10,8 +11,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MatButtonModule,
-    RouterModule
-  ],
+    RouterModule,
+    BtnWhatsappComponent
+],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

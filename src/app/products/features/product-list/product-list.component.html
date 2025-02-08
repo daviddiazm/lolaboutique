@@ -1,8 +1,62 @@
-<section class="products">
+<section class="products_list">
+
+
+  <form action="" [formGroup]="productForm" (ngModelChange)="apllyFilters()" >
+
+    <div class="search_box">
+      <mat-form-field appearance="outline">
+        <mat-label>Buscar...</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="title" >
+      </mat-form-field>
+      <!-- <input type="submit" value="Buscar" fontIcon="search" > -->
+      <button >
+        <mat-icon fontIcon="search"></mat-icon>
+      </button>
+    </div>
+
+    <div class="selects_box">
+      <mat-form-field >
+        <mat-label>Talla</mat-label>
+        <mat-select  multiple (valueChange)="setSize($event)" [value]="productForm.get('sizes')?.value" >
+          @for (size of sizesList; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>Marca</mat-label>
+        <mat-select  formControlName="brand"  >
+          <mat-option [value]="undefined" ></mat-option>
+          <mat-option [value]="brand" *ngFor="let brand of brandList" > {{brand}} </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Blusa, camisa...</mat-label>
+        <mat-select  formControlName="type" >
+          <mat-option [value]="undefined"></mat-option>
+          <mat-option [value]="type" *ngFor="let type of typeList" > {{type}} </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button (click)="resetFilters()" mat-stroked-button class="delete_filter_btn" *ngIf="productForm.dirty || productForm.get('sizes')?.value.length > 0 " >
+        Quitar filtros
+        <mat-icon>delete</mat-icon>
+      </button>
+      <!-- <button mat-mini-fab aria-label="Example icon button with a menu icon">
+        <mat-icon>delete</mat-icon>
+      </button> -->
+    </div>
+    <p>✨✨✨</p>
+  </form>
+
+
 
   <section class="list_cards">
     <ng-container *ngIf="clothes.length > 0">
-      <app-product-card *ngFor="let clothe of clothes" [clothe]="clothe"></app-product-card>
+      <app-product-card *ngFor="let clothe of filteredClothes" [clothe]="clothe"></app-product-card>
     </ng-container>
   </section>
 
