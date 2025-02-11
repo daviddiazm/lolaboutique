@@ -11,7 +11,7 @@
     </article>
     <div class="btns">
       <app-btn-whatsapp [clotheImg]="clothe.img_url" ></app-btn-whatsapp>
-      <a target="_blank"
+      <a 
         [routerLink]="['/products', 'product-detail', clothe.id]"
         class="detail_btn">
         <button mat-button  >

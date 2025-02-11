@@ -23,6 +23,7 @@ export default class ProductDetailComponent implements OnInit {
   id : string | null = ''
   linkWhatsApp : string = ''
   clothe !: Clothe
+  stars: string = ''
 
   constructor(
     private route: ActivatedRoute,
@@ -49,21 +50,18 @@ export default class ProductDetailComponent implements OnInit {
           type: clothe.fields.typeClothe
         };
 
+        this.getStars()
+
         this.linkWhatsApp = `https://wa.me/573117672673?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20${this.clothe.img_url}`
       });
     }
 
   }
 
+  getStars () {
+    for (let i = 0; i < Number(this.clothe.condition) ; i++) {
+      this.stars += "⭐"
+    }
+  }
+
 }
-
-
-//
-// brandClothe: "Forever 21"
-// conditionClothe: 5
-// idClothe: "1"
-// imgClothe: Array [ {…} ]
-// priceClothe: 10000
-// sizeClothe: "XS"
-// titleClothe: "Pantalon liviano"​
-// typeClothe: "Pantalon"

@@ -1,4 +1,10 @@
 <section>
+  <div class="circle"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+    <div class="circle4"></div>
+    <div class="circle5"></div>
+    
   <div class="img_container">
     <img [src]="clothe.img_url" alt="Prenda de ropa">
   </div>
@@ -8,6 +14,8 @@
       <p><span>Talla:</span> {{clothe.size}} </p>
       <p><span>Marca:</span> {{clothe.brand}}</p>
       <p><span>Precio:</span> {{clothe.price | currency:'USD':'symbol':'1.0-0'}}</p>
+      <p><span>Tipo de prenda:</span> {{clothe.type}}</p>
+      <p><span>Estado:</span> {{stars}} </p>
     </article>
     <div class="btns">
       <app-btn-whatsapp [clotheImg]="clothe.img_url" ></app-btn-whatsapp>
