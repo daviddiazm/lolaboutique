@@ -1,10 +1,13 @@
 <section>
-  <div class="circle"></div>
+
+  <div class="circles">
+    <div class="circle"></div>
     <div class="circle2"></div>
     <div class="circle3"></div>
     <div class="circle4"></div>
     <div class="circle5"></div>
-    
+  </div>
+
   <div class="img_container">
     <img [src]="clothe.img_url" alt="Prenda de ropa">
   </div>
@@ -18,7 +21,7 @@
       <p><span>Estado:</span> {{stars}} </p>
     </article>
     <div class="btns">
-      <app-btn-whatsapp [clotheImg]="clothe.img_url" ></app-btn-whatsapp>
+      <app-btn-whatsapp [clotheImg]="clothe.img_url"></app-btn-whatsapp>
     </div>
   </div>
 </section>
