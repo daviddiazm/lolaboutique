@@ -10,8 +10,8 @@
       <p><span>Precio:</span> {{clothe.price | currency:'USD':'symbol':'1.0-0'}}</p>
     </article>
     <div class="btns">
-      <app-btn-whatsapp [clotheImg]="clothe.img_url" ></app-btn-whatsapp>
-      <a 
+      <app-btn-whatsapp [clotheId]="clothe.id" ></app-btn-whatsapp>
+      <a
         [routerLink]="['/products', 'product-detail', clothe.id]"
         class="detail_btn">
         <button mat-button  >
