@@ -21,7 +21,7 @@
       <p><span>Estado:</span> {{stars}} </p>
     </article>
     <div class="btns">
-      <app-btn-whatsapp [clotheImg]="clothe.img_url"></app-btn-whatsapp>
+      <app-btn-whatsapp *ngIf="clothe.id" [clotheId]="clothe.id"></app-btn-whatsapp>
     </div>
   </div>
 </section>

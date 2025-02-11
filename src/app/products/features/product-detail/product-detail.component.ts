@@ -39,7 +39,7 @@ export default class ProductDetailComponent implements OnInit {
       this.contentfulService.getEntrieById(this.id).subscribe((clothe : ClotheResponse) => {
         console.log(clothe);
         this.clothe = {
-          id: '0',
+          id: clothe.sys.id,
           brand: clothe.fields.brandClothe ,
           img_url: clothe.fields.imgClothe[0].fields.file.url ,
           price: clothe.fields.priceClothe,
@@ -52,7 +52,8 @@ export default class ProductDetailComponent implements OnInit {
 
         this.getStars()
 
-        this.linkWhatsApp = `https://wa.me/573117672673?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20${this.clothe.img_url}`
+        // this.linkWhatsApp = `https://wa.me/573117672673?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20${this.clothe.img_url}`
+        // this.linkWhatsApp = `https://wa.me/573117672673?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20https://lolasboutique.netlify.app/products/product-detail/${this.clothe.id}`
       });
     }
 

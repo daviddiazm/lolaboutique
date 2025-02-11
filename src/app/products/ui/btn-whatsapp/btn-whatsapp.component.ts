@@ -37,14 +37,16 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BtnWhatsappComponent implements OnInit {
-  @Input() clotheImg: String = ''
+  @Input() clotheId: String = ''
+  phoneNumber: String = '573205219906'
 
   linkWhatsApp: string = ``
 
   ngOnInit(): void {
-    if(this.clotheImg) {
-      // this.linkWhatsApp = `https://wa.me/573117672673?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20${this.clotheImg}`
-      this.linkWhatsApp = `https://wa.me/573205219906?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20${this.clotheImg}`
+    if(this.clotheId) {
+      // this.linkWhatsApp = `https://wa.me/573117672673?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20${this.clotheId}`
+      // this.linkWhatsApp = `https://wa.me/573205219906?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20${this.clotheId}`
+      this.linkWhatsApp = `https://wa.me/${this.phoneNumber}?text=Hola%20Buenos%20dias%20estoy%20interesad@%20por%20esta%20prenda%20https://lolasboutique.netlify.app/products/product-detail/${this.clotheId}`
     }
   }
 
